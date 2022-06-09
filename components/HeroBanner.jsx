@@ -1,20 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 
-import { urlFor } from '../lib/client'
+import { urlFor } from '../lib/client';
 
-const HeroBanner = ({heroBanner}) => {
-  const { 
+function HeroBanner({ heroBanner }) {
+  const {
     smallText,
     midText,
     largeText1,
     image,
     product,
     buttonText,
-    desc} = heroBanner
+    desc,
+  } = heroBanner;
   return (
-    <>
     <div className="hero-banner-container">
       <div>
         <p className="beats-solo">{smallText}</p>
@@ -33,12 +33,11 @@ const HeroBanner = ({heroBanner}) => {
         </div>
       </div>
     </div>
-    </>
-  )
+  );
 }
 
-export default HeroBanner
+export default HeroBanner;
 
 HeroBanner.propTypes = {
-  heroBanner: PropTypes.instanceOf(Object).isRequired
-}
+  heroBanner: PropTypes.instanceOf(Object).isRequired,
+};
