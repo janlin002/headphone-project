@@ -14,6 +14,7 @@ function HeroBanner({ heroBanner }) {
     buttonText,
     desc,
   } = heroBanner;
+
   return (
     <div className="hero-banner-container">
       <div>
@@ -41,3 +42,6 @@ export default HeroBanner;
 HeroBanner.propTypes = {
   heroBanner: PropTypes.instanceOf(Object).isRequired,
 };
+
+// 小坑:
+// heroBanner 的 product 名稱，一定要和 Prodects 裡面的產品其中一項一樣，才能夠找到相對應的路徑

@@ -5,6 +5,10 @@
       "airbnb"
     ],
     "rules": {
+      "semi": ["error", "never"], // 取消結尾逗號
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "no-underscore-dangle": "off", // 解決 _ 報錯問題
+      "@next/next/no-img-element": "off", //關閉不能使用 img 問題 
+      "react/jsx-one-expression-per-line": "off" // 解決 {} 只能自己一行問題
     }
 }
