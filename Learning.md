@@ -6,3 +6,7 @@
 ## eslint/airbnb 加入專案
 
 [Link](https://velog.io/@ykim5470/NEXT.js-setting-with-airbnb-eslint-prettier-application-kqk53l0oso)
+
+## Next Dynamic Routes
+
+[Link](https://nextjs.org/docs/routing/dynamic-routes)

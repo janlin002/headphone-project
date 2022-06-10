@@ -161,5 +161,3 @@ ProductDetails.propTypes = {
   product: PropTypes.instanceOf(Object).isRequired,
   products: PropTypes.instanceOf(Object).isRequired,
 }
-
-// Dynamic Route => https://nextjs.org/docs/routing/dynamic-routes

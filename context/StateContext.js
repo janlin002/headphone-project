@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 const Context = createContext()
 
 function StateContext({ children }) {
-  // 顯示購物車
+  // 點擊購物車圖示後，顯示右側清單
   const [showCart, setShowCart] = useState(false)
 
   // 購物車內容
@@ -41,22 +41,22 @@ function StateContext({ children }) {
         if (cartProduct._id === product._id) {
           return {
             ...cartProduct,
-            utity: cartProduct.qutity + qutity,
+            utity: cartProduct.qutity + qutity, // 增加數量
           }
         }
       })
       setCartItems(updatedCartItems)
     } else {
-      product.qutity = qutity
+      product.qutity = qutity // 購物車內沒有東西，故直接嫁入即可
 
       setCartItems([...cartItems, { ...product }])
     }
     toast.success(`${qutity}個 ${product.name} 已加入購物車！`)
   }
 
-  useEffect(() => {
-    console.log(cartItems, 'cartItems')
-  }, [cartItems])
+  // useEffect(() => {
+  //   console.log(cartItems, 'cartItems')
+  // }, [cartItems])
 
   // 購買數量
   // 新增
@@ -80,6 +80,7 @@ function StateContext({ children }) {
       // eslint-disable-next-line react/jsx-no-constructed-context-values
       value={{
         showCart,
+        setShowCart,
         cartItems,
         totalPrice,
         totalQuantities,
