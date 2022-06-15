@@ -54,10 +54,33 @@ function StateContext({ children }) {
     toast.success(`${qutity}個 ${product.name} 已加入購物車！`)
   }
 
-  // useEffect(() => {
-  //   console.log(cartItems, 'cartItems')
-  // }, [cartItems])
+  // 購物車商品數量修改 item._id, 'dec'
+  // 如果數量歸零，就清除？
+  const toggleCartItemQuanitity = (id, value) => {
+    // product
+    const fundProduct = cartItems.find((item) => item._id === id)
+    // index
+    // const fundIndex = cartItems.findIndex((item) => item._id === id)
+    // other product
+    const otherProduct = cartItems.filter((item) => item._id !== id)
 
+    if (value === 'dec') {
+      // 內容物
+      setCartItems([...otherProduct, { ...fundProduct, qutity: fundProduct.qutity - 1 }])
+      // 價格
+      setTotalPrice((prevTotalPrice) => prevTotalPrice - fundProduct.price)
+      // 數量
+      setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - 1)
+    }
+    if (value === 'inc') {
+      // 內容物
+      setCartItems([...otherProduct, { ...fundProduct, qutity: fundProduct.qutity + 1 }])
+      // 價格
+      setTotalPrice((prevTotalPrice) => prevTotalPrice + fundProduct.price)
+      // 數量
+      setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + 1)
+    }
+  }
   // 購買數量
   // 新增
   const inQty = () => {
@@ -76,7 +99,7 @@ function StateContext({ children }) {
 
   return (
     <Context.Provider
-        // 先這樣處理
+      // 先這樣處理
       // eslint-disable-next-line react/jsx-no-constructed-context-values
       value={{
         showCart,
@@ -88,6 +111,7 @@ function StateContext({ children }) {
         inQty,
         decQty,
         onAdd,
+        toggleCartItemQuanitity,
       }}
     >
       {children}

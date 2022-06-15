@@ -21,10 +21,6 @@ function Cart() {
     onRemove,
   } = useStateContext()
 
-  // const handleCheckout = () => {
-  //   console.log('hello')
-  // }
-
   return (
     <div className="cart-wrapper" ref={cartRef}>
       <div className="cart-container">

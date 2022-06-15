@@ -8,7 +8,7 @@
 |-lib - 綁定sanity
 |-pages
    |-product
-       |- Dynamic Routes
+       |- [slug.js] => Dynamic Routes
 |-project - sanity位置
 |-public
 |-styles
