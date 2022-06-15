@@ -81,6 +81,24 @@ function StateContext({ children }) {
       setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + 1)
     }
   }
+
+  // 從購物車移除
+  const onRemove = (product) => {
+    // product
+    const fundProduct = cartItems.find((item) => item._id === product._id)
+    // index
+    // const fundIndex = cartItems.findIndex((item) => item._id === id)
+    // other product
+    const otherProduct = cartItems.filter((item) => item._id !== product._id)
+
+    // 內容物
+    setCartItems(otherProduct)
+    // 價格
+    setTotalPrice((prevTotalPrice) => prevTotalPrice - fundProduct.price * fundProduct.qutity)
+    // 數量
+    setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - fundProduct.qutity)
+  }
+
   // 購買數量
   // 新增
   const inQty = () => {
@@ -112,6 +130,7 @@ function StateContext({ children }) {
         decQty,
         onAdd,
         toggleCartItemQuanitity,
+        onRemove,
       }}
     >
       {children}
