@@ -32,4 +32,6 @@
 
 [sanity](https://www.sanity.io/?adgroupid=136984388536&adid=597124016802&gclid=CjwKCAjwtIaVBhBkEiwAsr7-c9isU14_uJLLoU1x-Eag3G4PhNq6sAqjJJGE4wSUh08Ff19DGq-ixRoCaTQQAvD_BwE)
 
-_專案須以 node16 以後的版本開啟，不然會執行失敗_
+使用 eslint，維護代碼品質
+
+_專案須以 node16 以上的版本開啟，不然會執行失敗_

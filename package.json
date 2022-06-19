@@ -2,6 +2,7 @@
   "name": "project",
   "version": "0.1.0",
   "private": true,
+  "author": "J4NBOYOP",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -23,7 +24,7 @@
     "react-dom": "18.1.0",
     "react-hot-toast": "^2.2.0",
     "react-icons": "^4.4.0",
-    "stripe": "^9.6.0"
+    "stripe": "^9.9.0"
   },
   "devDependencies": {
     "eslint": "8.17.0",

@@ -54,8 +54,7 @@ function StateContext({ children }) {
     toast.success(`${qutity}個 ${product.name} 已加入購物車！`)
   }
 
-  // 購物車商品數量修改 item._id, 'dec'
-  // 如果數量歸零，就清除？
+  // 購物車商品數量修改
   const toggleCartItemQuanitity = (id, value) => {
     // product
     const fundProduct = cartItems.find((item) => item._id === id)

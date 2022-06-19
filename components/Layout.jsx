@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Head from 'next/head'
 
-import Navbar from './Navbar';
-import Footer from './Footer';
+import Navbar from './Navbar'
+import Footer from './Footer'
 
-const Layout = ({children}) => {
+function Layout({ children }) {
   return (
     <div className="layout">
       <Head>
@@ -27,5 +27,5 @@ const Layout = ({children}) => {
 export default Layout
 
 Layout.propTypes = {
-  children: PropTypes.instanceOf(Object).isRequired
+  children: PropTypes.instanceOf(Object).isRequired,
 }

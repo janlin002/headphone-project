@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'next/link';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Link from 'next/link'
 
-import { urlFor } from '../lib/client';
+import { urlFor } from '../lib/client'
 
 function HeroBanner({ heroBanner }) {
   const {
@@ -13,7 +13,7 @@ function HeroBanner({ heroBanner }) {
     product,
     buttonText,
     desc,
-  } = heroBanner;
+  } = heroBanner
 
   return (
     <div className="hero-banner-container">
@@ -34,14 +34,14 @@ function HeroBanner({ heroBanner }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default HeroBanner;
+export default HeroBanner
 
 HeroBanner.propTypes = {
   heroBanner: PropTypes.instanceOf(Object).isRequired,
-};
+}
 
 // 小坑:
 // heroBanner 的 product 名稱，一定要和 Prodects 裡面的產品其中一項一樣，才能夠找到相對應的路徑

@@ -25,7 +25,7 @@ function Cart() {
     <div className="cart-wrapper" ref={cartRef}>
       <div className="cart-container">
 
-        {/* 關閉按鈕 */}
+        {/* 關閉確認頁の按鈕 */}
         <button
           type="button"
           className="cart-heading"
