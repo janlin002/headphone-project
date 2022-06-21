@@ -28,6 +28,10 @@
 
 待補...
 
+### 如何使用 stripe
+
+待補...
+
 ### 使用套件
 
 提示效果: [react-hot-toast](https://react-hot-toast.com/)
