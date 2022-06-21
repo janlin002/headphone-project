@@ -1,19 +1,4 @@
-## 小坑
-
-1. sanity start 跟 sanity manage 的帳號一定要一樣(Google - Google || Github - Github)，不然會找不到對應資料庫
-2. heroBanner 的 product 名稱，一定要和 Prodects 裡面的產品其中一項一樣，才能夠找到相對應的路徑
-
-## eslint/airbnb 加入專案
-
-[Link](https://velog.io/@ykim5470/NEXT.js-setting-with-airbnb-eslint-prettier-application-kqk53l0oso)
-
-## Next Dynamic Routes
-
-[Link](https://nextjs.org/docs/routing/dynamic-routes)
-
-## How to deploy in Vercel
-
-[IT 鐵人幫](https://ithelp.ithome.com.tw/articles/10269342)
+### 這邊會簡單介紹一下使用 sanity 的方法
 
 ## How to use Sanity
 
@@ -45,7 +30,9 @@ sanity manage
 
 建立一個 Datasets
 
-![dataset](./public/datasets.png)
+![dataset](../public/datasets.png)
+
+在專案裡面建立一個 client.js 檔案，方便做 sanity 引入
 
 ```js
 npm install @sanity/client
@@ -62,19 +49,19 @@ export default sanityClient({
 這邊的係數位置，我會以圖片方式呈現
 
 projectId:
-![projectId](./public/projectID.png)
+![projectId](../public/projectID.png)
 
 dataset: 就是前面建立好的 dataset，把取好的名稱輸入即可
-![dataset](./public/useDataset.png)
+![dataset](../public/useDataset.png)
 
 token:
 Token 必須先到 API/Tokens 裡面去建立一個 Token
 
-![token](./public/token.png)
+![token](../public/token.png)
 
 Token 建立選擇我個人是選 Editor
 
-![buildToken](./public/buildToken.png)
+![buildToken](../public/buildToken.png)
 
 當你走到這步時，基本上你的專案應該已經綁定 sanity 的資料庫了，如果發現他一直找不到對應的資料庫的話
 
@@ -82,7 +69,7 @@ Token 建立選擇我個人是選 Editor
 
 > 簡單來說就是：如果是用 Google 登入的話，兩個後台都需要使用 Google 登入，反之 Github 登入也一樣
 
-筆者在這裡卡了兩天...
+筆者因為這個問題在這裡卡了兩天...
 
 ## 建立專案 Sanity 後台
 
@@ -139,7 +126,7 @@ sanity start
 
 Sanity 的 Create 功能，是可以直接對後台做更改，不需要打 api
 
-![create](./public/sanityCreate.png)
+![create](../public/sanityCreate.png)
 
 ### R: Read
 
@@ -154,7 +141,7 @@ Sanity 的 Create 功能，是可以直接對後台做更改，不需要打 api
 ### D: Delete
 
 跟 Create 一樣，可以直接在後台執行
-![delete](./public/sanityDelete.png)
+![delete](../public/sanityDelete.png)
 
 ## READ
 
