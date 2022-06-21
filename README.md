@@ -30,7 +30,9 @@
 
 ### 如何使用 stripe
 
-待補...
+待補... (2022/06/07)
+
+[sanity 基礎建立](https://github.com/janlin002/headphone-project/blob/master/learn/Sanity.md) (2022/06/21)
 
 ### 使用套件
 
