@@ -1,10 +1,10 @@
 import React, {
   useState,
   createContext,
-  useEffect,
+  // useEffect,
   useContext,
 } from 'react'
-import toast, { Toaster } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 import PropTypes from 'prop-types'
 
 const Context = createContext()
@@ -37,6 +37,7 @@ function StateContext({ children }) {
 
     // 購物車顯示
     if (checkCartItem) {
+      // eslint-disable-next-line array-callback-return
       const updatedCartItems = cartItems.map((cartProduct) => {
         if (cartProduct._id === product._id) {
           return {

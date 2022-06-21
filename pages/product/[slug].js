@@ -32,12 +32,13 @@ function ProductDetails({ product, products }) {
             <img src={urlFor(image && image[index])} className="product-detail-image" alt="phote" />
           </div>
           <div className="small-images-container">
-            {image?.map((item, i) => (
+            {image?.map((item, indexx) => (
               <img
-                key={i}
+                // eslint-disable-next-line react/no-array-index-key
+                key={indexx}
                 src={urlFor(item)}
-                className={i === index ? 'small-image selected-image' : 'small-image'}
-                onMouseEnter={() => setIndex(i)}
+                className={indexx === index ? 'small-image selected-image' : 'small-image'}
+                onMouseEnter={() => setIndex(indexx)}
                 alt="product"
               />
             ))}
