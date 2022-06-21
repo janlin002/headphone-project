@@ -15,8 +15,14 @@ function ProductDetails({ product, products }) {
   } = product
 
   const {
-    inQty, decQty, qty, onAdd,
+    inQty, decQty, qty, onAdd, setShowCart,
   } = useStateContext()
+
+  const handleBuyNow = () => {
+    onAdd(product, qty)
+
+    setShowCart(true)
+  }
 
   return (
     <div>
@@ -97,6 +103,7 @@ function ProductDetails({ product, products }) {
             <button
               type="button"
               className="buy-now"
+              onClick={handleBuyNow}
             >
               Buy Now
             </button>
@@ -149,8 +156,6 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
   const product = await client.fetch(query)
   const products = await client.fetch(productsQuery)
-
-  console.log(product)
 
   return {
     props: { products, product },

@@ -8,6 +8,7 @@ import toast from 'react-hot-toast'
 
 import { useStateContext } from '../context/StateContext'
 import { urlFor } from '../lib/client'
+import getStripe from '../lib/getStripe'
 
 function Cart() {
   const cartRef = useRef()
@@ -20,6 +21,31 @@ function Cart() {
     toggleCartItemQuanitity,
     onRemove,
   } = useStateContext()
+
+  const handleCheckout = async () => {
+    const stripe = await getStripe()
+
+    // 打api
+    const response = await fetch('/api/stripe', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cartItems),
+    })
+
+    // 錯誤回應
+    if (response.statusCode === 500) return
+
+    // 資料內容
+    const data = await response.json()
+
+    // UI 提示
+    toast.loading('交易處理中...')
+
+    // 導到確認頁 successUrl OR cancelUrl
+    stripe.redirectToCheckout({ sessionId: data.id })
+  }
 
   return (
     <div className="cart-wrapper" ref={cartRef}>
@@ -120,7 +146,7 @@ function Cart() {
               <button
                 type="button"
                 className="btn"
-                // onClick={handleCheckout}
+                onClick={handleCheckout}
               >
                 信用卡支付
               </button>
