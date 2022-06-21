@@ -10,10 +10,12 @@ npm install -g @sanity/cli
 sanity init
 ```
 
-這時候 sanity 會在你的專案建設一個跟專案同名的資料夾，進入資料夾，裡面就是 sanity 的設定
+這時候 sanity 會問一堆問題，下載完後，進入你命名的資料夾內，裡面就有 Sanity 基本資料了
+
+![sanityQuestion](../public//sanityQuestion.png)
 
 ```js
-cd your-file-name
+cd sanity-file
 
 sanity start
 ```
