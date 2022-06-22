@@ -12,15 +12,23 @@ sanity init
 
 這時候 sanity 會問一堆問題，下載完後，進入你命名的資料夾內，裡面就有 Sanity 基本資料了
 
-![sanityQuestion](../public//sanityQuestion.png)
+![sanityQuestion](../public//sanityQuestion2.png)
 
 ```js
 cd sanity-file
+
+npm i @sanity/client
 
 sanity start
 ```
 
 Sanity 會在 https://localhost:3333/ 開啟你這個專案的後台畫面，記得建立專案時不要使用 localhost:3333，不然會出現問題
+
+進入 localhost:3333 後，選擇自己喜歡的登入方式
+
+![login](../public//login.png)
+
+由於我們前面選擇不要模板，所以內容會是空的，後面會帶大家新增內容
 
 ### Sanity 綁定專案
 
@@ -190,4 +198,4 @@ Sanity 找資料比較特殊一點，是使用 Query Language(GROQ)
 *[_type == "product" && slug.current == '${slug}'][0]
 ```
 
-以上就是 sanity 基本使用
+以上就是 sanity 基本使用，祝大家學習愉快
