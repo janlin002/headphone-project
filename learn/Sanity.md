@@ -75,7 +75,7 @@ Token 建立選擇我個人是選 Editor
 
 當你走到這步時，基本上你的專案應該已經綁定 sanity 的資料庫了，如果發現他一直找不到對應的資料庫的話
 
-**_請確認你的 sanity start(專案後台) 跟 sanity manage(帳號後台) 鎖開啟的平台是使用同一個方式開啟_**
+**_請確認你的 sanity start(專案後台) 跟 sanity manage(帳號後台) 所開啟的平台是使用同一個方式開啟_**
 
 > 簡單來說就是：如果是用 Google 登入的話，兩個後台都需要使用 Google 登入，反之 Github 登入也一樣
 
@@ -150,7 +150,7 @@ Sanity 的 Create 功能，是可以直接對後台做更改，不需要打 api
 
 ### D: Delete
 
-跟 Create 一樣，可以直接在後台執行
+跟 Create 一樣，可以直接在後台執行(圖片右下角)
 ![delete](../public/sanityDelete.png)
 
 ## READ
@@ -198,4 +198,16 @@ Sanity 找資料比較特殊一點，是使用 Query Language(GROQ)
 *[_type == "product" && slug.current == '${slug}'][0]
 ```
 
-以上就是 sanity 基本使用，祝大家學習愉快
+了解到 Sanity 如何取資料後，我們實戰演練一下
+
+如果我今天想分別取 type 為 product 跟 type 為 banner 的資料，以下就是正確的取資料方法
+
+```js
+const query = '*[_type == "product"]';
+const products = await client.fetch(query);
+
+const bannerQuery = '*[_type == "banner"]';
+const bannerData = await client.fetch(bannerQuery);
+```
+
+以上就是 sanity 基本使用，從基本專案建立到取出資料，我們下次見，掰掰
